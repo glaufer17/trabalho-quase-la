@@ -27,7 +27,7 @@ int main() {
             //inserir_no_final();
             printf("Digite um valor: ");
             scanf("%d", &valor);
-            inserir_no_inicio(lista, valor);
+            inserir_no_final(lista, valor);
             break;
          case 3:
             //remover_no_inico();
