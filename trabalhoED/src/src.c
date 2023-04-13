@@ -53,7 +53,7 @@ void inserir_no_inicio(Lista *lista, int valor){
 
 void inserir_no_final(Lista *lista, int valor){
 
-    No *auxiliar, *novo = (No*)malloc(sizeof(No));
+    No *novo = (No*)malloc(sizeof(No));
 
     if(novo == NULL){
         perror("malloc");
@@ -64,14 +64,13 @@ void inserir_no_final(Lista *lista, int valor){
     novo->anterior = NULL;
     novo->proximo = NULL;
 
-if(lista->cabeca == NULL){
+    if(lista->cabeca == NULL){
         lista->cabeca = novo;
         lista->cauda = novo;
     }else{
 
-        auxiliar = lista->cauda;
-        novo->anterior = auxiliar;
-        auxiliar->proximo = novo;
+        novo->anterior = lista->cauda;
+        lista->cauda->proximo = novo;
         lista->cauda = novo;
     }
     lista->tamanho = lista->tamanho + 1;
